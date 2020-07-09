@@ -1,0 +1,7 @@
+Important functions in the experiment:
+-we can reform the sentence if we think we followed wrong pattern.
+-we can get the right answer through get answers button if we are unable to find correct answer.
+-we can hide the answer also.
+
+
+-in additon to above functions we can also add a fuction to change the sentence if we want another function.
