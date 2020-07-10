@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 25px;
+font-weight:300;
+}
+#z{
+font-size: 22px;
+text-align: center;
+}
+#x{
+font-family:  sans-serif;
+font-size: 20px;
+color: #0000CD;
+text-align: center;
+}
+#y{
+font-family:  sans-serif;
+font-style: italic;
+font-size: 18px;
+color: #0000FF;
+text-align:center;
+}
+</style>
+</head>
+<body>
+<h1>Experiment</h1>
+<div id="z">
+<select name="language" id="language">
+<option value="" onclick="warn()">---Select Language---</option>
+<option value="English" onclick="dis()">English</option>
+<option value="Hindi" onclick="dis()">Hindi</option>
+</select>
+</div>
+<br></br>
+
+<p id="x" hidden >Form a sentence (Declarative or Interrogative or any other type) from the given words</p>
+<p id="y" hidden>(select the buttons in proper order)</p>
+<script>
+function dis(){
+document.getElementById("x").style.display="block";
+document.getElementById("y").style.display="block";
+}
+function warn(){
+alert("select language");
+}
+</script>
+</body>
+</html>
