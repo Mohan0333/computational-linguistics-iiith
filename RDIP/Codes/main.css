@@ -1,0 +1,25 @@
+h1{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 25px;
+font-weight:300;
+}
+#z{
+font-size: 22px;
+text-align: center;
+}
+#x{
+font-family:  sans-serif;
+font-size: 20px;
+color: #0000CD;
+text-align: center;
+}
+#y{
+font-family:  sans-serif;
+font-style: italic;
+font-size: 18px;
+color: #0000FF;
+text-align:center;
+}
+#demo{
+	text-align: center;
+}
