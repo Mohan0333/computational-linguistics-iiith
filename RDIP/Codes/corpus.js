@@ -21,6 +21,8 @@ var Hindi=[
 	 ["एक बड़ी सी किताब वहाँ है","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है"," बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब"," है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"]
 	 ];
 var rs='';
+var cnt=0;
+var cmt=0;
 //sentences below dropdown
 function dis1(){
 document.getElementById("x").style.display="block";
@@ -51,6 +53,7 @@ var shuff=s.split(' ');
 		s=' <button id="btn'+i+'" value='+shuff[i]+' onclick="ord(this.id,this.value)">'+shuff[i]+'</button>';
          ss+=(s+"   ");
 		 rs+=(s+"   ");
+		 cmt++;
 	}
 document.getElementById("demo").innerHTML=ss;
 }
@@ -83,6 +86,7 @@ var shuff=s.split(' ');
 		s='<button id="btn'+i+'"  value='+shuff[i]+' onclick="ord(this.id,this.value)">'+shuff[i]+'</button>';
          ss+=(s+"   ");
 	    rs+=(s+"    ");
+		cmt++;
 	}
 
 document.getElementById("demo").innerHTML=ss;
@@ -96,11 +100,15 @@ alert("select language");
 var sen="";
 function ord(id,value){
 	sen+=(value + " ");
-	
+	cnt++;
 	document.getElementById("demo1").style.display="block";
 	 document.getElementById("demo2").innerHTML = sen;
 	document.getElementById(id).style.display = "none";
 	document.getElementById("demo3").innerHTML = '<button onclick="re()">Re-form the sentence</button>';
+if(cnt==cmt){
+	document.getElementById("demo4").innerHTML='<button>Check the correctness of this sentence</button>';
+    cnt=0;
+}
 }
 function re(){
 	sen="";
@@ -108,4 +116,5 @@ document.getElementById("demo1").style.display="";
 document.getElementById("demo2").innerHTML=sen;
 document.getElementById("demo").innerHTML=rs;
 document.getElementById("demo3").innerHTML="";
+document.getElementById("demo4").innerHTML="";
 }
