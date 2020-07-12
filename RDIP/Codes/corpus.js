@@ -20,6 +20,7 @@ var Hindi=[
 	 ["एक लाल किताब वहाँ है","एक लाल किताब है वहाँ","वहाँ है एक लाल किताब","है वहाँ एक लाल किताब"],
 	 ["एक बड़ी सी किताब वहाँ है","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है"," बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब"," है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"]
 	 ];
+var rs='';
 //sentences below dropdown
 function dis1(){
 document.getElementById("x").style.display="block";
@@ -44,10 +45,12 @@ var shuff=s.split(' ');
 //to display the random words as buttons
 	var s='';
 	var ss='';
+	
 	for(i=0;i<shuff.length;i++)
 	{
 		s=' <button id="btn'+i+'" value='+shuff[i]+' onclick="ord(this.id,this.value)">'+shuff[i]+'</button>';
          ss+=(s+"   ");
+		 rs+=(s+"   ");
 	}
 document.getElementById("demo").innerHTML=ss;
 }
@@ -74,10 +77,12 @@ var shuff=s.split(' ');
 
 	var s='';
 	var ss='';
+
 	for(i=0;i<shuff.length;i++)
 	{
 		s='<button id="btn'+i+'"  value='+shuff[i]+' onclick="ord(this.id,this.value)">'+shuff[i]+'</button>';
          ss+=(s+"   ");
+	    rs+=(s+"    ");
 	}
 
 document.getElementById("demo").innerHTML=ss;
@@ -95,5 +100,12 @@ function ord(id,value){
 	document.getElementById("demo1").style.display="block";
 	 document.getElementById("demo2").innerHTML = sen;
 	document.getElementById(id).style.display = "none";
-	document.getElementById("demo3").innerHTML = '<button>Re-form the sentence</button>';
+	document.getElementById("demo3").innerHTML = '<button onclick="re()">Re-form the sentence</button>';
+}
+function re(){
+	sen="";
+document.getElementById("demo1").style.display="";
+document.getElementById("demo2").innerHTML=sen;
+document.getElementById("demo").innerHTML=rs;
+document.getElementById("demo3").innerHTML="";
 }
