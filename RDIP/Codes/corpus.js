@@ -120,6 +120,7 @@ document.getElementById("demo3").innerHTML="";
 document.getElementById("demo4").innerHTML="";
 document.getElementById("demo5").innerHTML="";
 document.getElementById("demo6").innerHTML="";
+document.getElementById("demo7").innerHTML="";
 }
 function check(){
 	fsen=sen.trim();
@@ -129,7 +130,20 @@ function check(){
 	}
 	else{
 		document.getElementById("demo5").innerHTML="<span style='font-size: 35px; color:red;'>Wrong answer!!!</span>";
-        document.getElementById("demo6").innerHTML='<button>Get Correct Sentence</button>'	
+        document.getElementById("demo6").innerHTML='<button onclick="ans()">Get Correct Sentence</button>'	
 	}
 	
+}
+function ans(){
+var answers='';
+	for(i=0;i<crt.length;i++)
+	{
+	  answers+=crt[i]+"<br>";
+	}
+	document.getElementById("demo7").innerHTML=answers;
+	document.getElementById("demo6").innerHTML='<button onclick="hide()">Hide the correct Sentence</button>'
+}
+function hide(){
+	document.getElementById("demo7").innerHTML="";
+	document.getElementById("demo6").innerHTML='<button onclick="ans()">Get Answers</button>'
 }
