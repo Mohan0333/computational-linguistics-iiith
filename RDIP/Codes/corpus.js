@@ -24,10 +24,23 @@ var rs='';
 var cnt=0;
 var cmt=0;
 var crt;
-//sentences below dropdown
-function dis1(){
+
+function dis(){
+if (language.value === "English"){              
+                
+    document.getElementById("demo1").innerHTML = "";
+    document.getElementById("demo2").innerHTML = "";
+    document.getElementById("demo3").innerHTML = "";
+    document.getElementById("demo4").innerHTML = "";
+    document.getElementById("demo5").innerHTML = "";
+    document.getElementById("demo6").innerHTML = "";
+    document.getElementById("demo7").innerHTML = "";
+        answers="";
+	    sen="";
+	cmt=0;
 document.getElementById("x").style.display="block";
 document.getElementById("y").style.display="block";
+
 //to choose a random sentence 
 var rand1=English[Math.floor(Math.random()*English.length)];
 var rand2=rand1[Math.floor(Math.random()*rand1.length)];
@@ -48,7 +61,7 @@ var shuff=s.split(' ');
 //to display the random words as buttons
 	var s='';
 	var ss='';
-	
+	rs='';
 	for(i=0;i<shuff.length;i++)
 	{
 		s=' <button id="btn'+i+'" value='+shuff[i]+' onclick="ord(this.id,this.value)">'+shuff[i]+'</button>';
@@ -58,7 +71,19 @@ var shuff=s.split(' ');
 	}
 document.getElementById("demo").innerHTML=ss;
 }
-function dis2(){
+else if(language.value==="Hindi"){
+	
+	
+    document.getElementById("demo1").innerHTML = "";
+    document.getElementById("demo2").innerHTML = "";
+    document.getElementById("demo3").innerHTML = "";
+    document.getElementById("demo4").innerHTML = "";
+    document.getElementById("demo5").innerHTML = "";
+    document.getElementById("demo6").innerHTML = "";
+    document.getElementById("demo7").innerHTML = "";
+        answers="";
+	    sen="";
+cmt=0;
 document.getElementById("x").style.display="block";
 document.getElementById("y").style.display="block";
 var rand3=Hindi[Math.floor(Math.random()*Hindi.length)];
@@ -81,7 +106,7 @@ var shuff=s.split(' ');
 
 	var s='';
 	var ss='';
-
+       rs='';
 	for(i=0;i<shuff.length;i++)
 	{
 		s='<button id="btn'+i+'"  value='+shuff[i]+' onclick="ord(this.id,this.value)">'+shuff[i]+'</button>';
@@ -92,10 +117,12 @@ var shuff=s.split(' ');
 
 document.getElementById("demo").innerHTML=ss;
 }
+else if(language.value===""){
 
-function warn(){
-alert("select language");
-}
+    alert("select language");
+                
+           }}
+
 
 //to show formed sentence
 var sen="";
