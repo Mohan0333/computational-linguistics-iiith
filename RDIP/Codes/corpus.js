@@ -119,6 +119,7 @@ document.getElementById("demo").innerHTML=rs;
 document.getElementById("demo3").innerHTML="";
 document.getElementById("demo4").innerHTML="";
 document.getElementById("demo5").innerHTML="";
+document.getElementById("demo6").innerHTML="";
 }
 function check(){
 	fsen=sen.trim();
@@ -128,6 +129,7 @@ function check(){
 	}
 	else{
 		document.getElementById("demo5").innerHTML="<span style='font-size: 35px; color:red;'>Wrong answer!!!</span>";
+        document.getElementById("demo6").innerHTML='<button>Get Correct Sentence</button>'	
 	}
 	
 }

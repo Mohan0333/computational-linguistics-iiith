@@ -43,12 +43,6 @@ font-weight: 100;
 	font-size: 35px;
 	color:Gray;
 }
-#demo3{
-	text-align: center;
-}
-#demo4{
-	text-align: center;
-}
-#demo5{
+#demo3,#demo4,#demo5,#demo6{
 	text-align: center;
 }
