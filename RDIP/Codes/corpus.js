@@ -133,6 +133,7 @@ function ord(id,value){
 	 document.getElementById("demo2").innerHTML = sen;
 	document.getElementById(id).style.display = "none";
 	document.getElementById("demo3").innerHTML = '<button onclick="re()">Re-form the sentence</button>';
+
 if(cnt==cmt){
 	document.getElementById("demo4").innerHTML='<button onclick="check()">Check the correctness of this sentence</button>';
     cnt=0;
