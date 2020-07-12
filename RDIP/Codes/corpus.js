@@ -46,7 +46,7 @@ var shuff=s.split(' ');
 	var ss='';
 	for(i=0;i<shuff.length;i++)
 	{
-		s='<button>'+shuff[i]+'</button>';
+		s=' <button id="btn'+i+'" value='+shuff[i]+' onclick="ord(this.id,this.value)">'+shuff[i]+'</button>';
          ss+=(s+"   ");
 	}
 document.getElementById("demo").innerHTML=ss;
@@ -76,7 +76,7 @@ var shuff=s.split(' ');
 	var ss='';
 	for(i=0;i<shuff.length;i++)
 	{
-		s='<button>'+shuff[i]+'</button>';
+		s='<button id="btn'+i+'"  value='+shuff[i]+' onclick="ord(this.id,this.value)">'+shuff[i]+'</button>';
          ss+=(s+"   ");
 	}
 
@@ -85,4 +85,15 @@ document.getElementById("demo").innerHTML=ss;
 
 function warn(){
 alert("select language");
+}
+
+//to show formed sentence
+var sen="";
+function ord(id,value){
+	sen+=(value + " ");
+	
+	document.getElementById("demo1").style.display="block";
+	 document.getElementById("demo2").innerHTML = sen;
+	document.getElementById(id).style.display = "none";
+	document.getElementById("demo3").innerHTML = '<button>Re-form the sentence</button>';
 }
