@@ -1,6 +1,6 @@
 var English=[
 	["John ate an apple before afternoon","before afternoon John ate an apple","John before afternoon ate an apple"],
-	["some students like to study in the night","at night some students like to study"],
+	["some students like to study in the night","in the night some students like to study"],
 	["John and Mary went to church","Mary and John went to church"],
 	["John went to church after eating","after eating John went to church","John after eating went to church"],
 	["did he go to market","he did go to market"],
@@ -23,6 +23,7 @@ var Hindi=[
 var rs='';
 var cnt=0;
 var cmt=0;
+var crt;
 //sentences below dropdown
 function dis1(){
 document.getElementById("x").style.display="block";
@@ -31,7 +32,7 @@ document.getElementById("y").style.display="block";
 var rand1=English[Math.floor(Math.random()*English.length)];
 var rand2=rand1[Math.floor(Math.random()*rand1.length)];
 var s=rand2;
-
+crt=rand1;
 //to shuffle the words in choosen sentence
 var shuff=s.split(' ');
 
@@ -63,7 +64,7 @@ document.getElementById("y").style.display="block";
 var rand3=Hindi[Math.floor(Math.random()*Hindi.length)];
 var rand4=rand3[Math.floor(Math.random()*rand3.length)];
 var s=rand4;
-
+crt=rand3;
 
 //to shuffle the words in choosen sentence
 var shuff=s.split(' ');
@@ -99,14 +100,14 @@ alert("select language");
 //to show formed sentence
 var sen="";
 function ord(id,value){
-	sen+=(value + " ");
+	sen+=value+" ";
 	cnt++;
 	document.getElementById("demo1").style.display="block";
 	 document.getElementById("demo2").innerHTML = sen;
 	document.getElementById(id).style.display = "none";
 	document.getElementById("demo3").innerHTML = '<button onclick="re()">Re-form the sentence</button>';
 if(cnt==cmt){
-	document.getElementById("demo4").innerHTML='<button>Check the correctness of this sentence</button>';
+	document.getElementById("demo4").innerHTML='<button onclick="check()">Check the correctness of this sentence</button>';
     cnt=0;
 }
 }
@@ -117,4 +118,16 @@ document.getElementById("demo2").innerHTML=sen;
 document.getElementById("demo").innerHTML=rs;
 document.getElementById("demo3").innerHTML="";
 document.getElementById("demo4").innerHTML="";
+document.getElementById("demo5").innerHTML="";
+}
+function check(){
+	fsen=sen.trim();
+	if(crt.includes(fsen))
+	{
+		document.getElementById("demo5").innerHTML="<span style='font-size: 35px; color: green;'>Right answer!!!</span>";
+	}
+	else{
+		document.getElementById("demo5").innerHTML="<span style='font-size: 35px; color:red;'>Wrong answer!!!</span>";
+	}
+	
 }
