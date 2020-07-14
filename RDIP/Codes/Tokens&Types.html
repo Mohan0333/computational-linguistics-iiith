@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="style.css">
 <script src="Tokens&Types.js"></script>
 </head>
 <body>
 <h1>Experiment</h1>
 <div id="z">
-<select name="corpus" id="corpus" onchange="dis()">
+<select name="choose" id="choose" onchange="dis()">
 <option value="" >---Select a corpus---</option>
 <option value="corpus1">Corpus 1</option>
 <option value="corpus2">Corpus 2</option>
@@ -15,5 +16,22 @@
 </select>
 </div>
 <br></br>
+<p id="demo"></p><br>
+<p id="demo1"></p>
+
+<div id="demo2" hidden>
+<table id="tbl">
+<tr>
+<td style="font-size: 20px">#tokens:</td>
+<td><input type="text" size="8"></td>
+</tr>
+<tr>
+<td style="font-size: 20px">#types:</td>
+<td><input type="text" size="8"></td>
+</tr>
+</table>
+</div>
+<br>
+<p id="demo3"></p>
 </body>
 </html>
