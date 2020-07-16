@@ -74,12 +74,17 @@ var corpus=[['A mouse was having a very bad time. She could find no food at all.
  else
 	 document.getElementById("typ").style.background="red";
  
- if((document.getElementById("tok").value==s.length)||(document.getElementById("typ").value==uniquewords.size))
+ if((document.getElementById("tok").value==s.length)&(document.getElementById("typ").value==uniquewords.size))
  {
 	 document.getElementById("demo4").innerHTML="<span style='color:green'>Right Answer</span>"
-     document.getElementById("demo5").innerHTML='<button>Continue</button>'
+     document.getElementById("demo5").innerHTML='<button onclick="root()">Continue</button>'
  }
 else
 	document.getElementById("demo4").innerHTML="<span style='color:red'>Wrong Answer</span>"
  }
-	 
+
+function root(){
+		 document.getElementById("demo3").innerHTML="Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types."
+	     document.getElementById("demo4").innerHTML="#new types:<br> <input type='text' size='8'>"
+		 document.getElementById("demo5").innerHTML='<button>Submit</button>'
+	 }
