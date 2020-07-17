@@ -27,7 +27,7 @@ var corpus=[['A mouse was having a very bad time. She could find no food at all.
  
  //to include snowball
  
- //var stemmer = new Snowball('English');
+// var stemmer = new Snowball('English');
 //stemmer.setCurrent('abbreviations');
 //stemmer.stem();
 //console.log(stemmer.getCurrent());
@@ -92,20 +92,34 @@ else
 
 function root(){
 		 document.getElementById("demo3").innerHTML="Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types."
-	     document.getElementById("demo4").innerHTML="#new types:<br> <input type='text' size='8'>"
+	     document.getElementById("demo4").innerHTML="#new types:<br> <input type='text' id='st' size='8'>"
 		 document.getElementById("demo5").innerHTML='<button onclick="stmg()">Submit</button>'
 	 }
+	 
+
 function stmg(){
-var	ss= str.replace(/[^a-zA-Z]/g,"");
-var sl=ss.toLowerCase();
-var stm=sl.split(' ');
-var stemmer = new Snowball('English');
-var arr=[];
-for(i=0;i<stm.length;i++){
-	stemmer.setCurrent(stm[i]);
-	stemmer.stem();
-    arr.push(stemmer.getCurrent());
+ str=str.replace(/[^a-zA-Z ]/g, "");
+        str=str.replace(/(^\s*)|(\s*$)/gi, "");
+        str = str.replace(/[ ]{2,}/gi, " ");
+        str = str.replace(/\n /, "\n");
+        str = str.toLowerCase();
+        str = str.split(" ");
+        let arr = [];
+		var stemmer = new Snowball('English');
+        for (let i = 0; i <str.length; i++) {
+            stemmer.setCurrent(str[i]);
+            stemmer.stem();
+            arr.push(stemmer.getCurrent());
+        }
+		arr = new Set(arr);
+	    arr = Array.from(arr)
+        console.log(arr);
+		console.log(arr.length);
+        compare(arr.length);
 }
-console.log(arr);
-console.log(arr.length);
+function compare(ans){
+	if(document.getElementById("st").value==ans)
+		document.getElementById("demo6").innerHTML="correct";
+	else
+		document.getElementById("demo6").innerHTML="wrong";
 }
