@@ -100,10 +100,12 @@ var	ss= str.replace(/[^a-zA-Z]/g,"");
 var sl=ss.toLowerCase();
 var stm=sl.split(' ');
 var stemmer = new Snowball('English');
-
+var arr=[];
 for(i=0;i<stm.length;i++){
 	stemmer.setCurrent(stm[i]);
 	stemmer.stem();
-    console.log(stemmer.getCurrent());
+    arr.push(stemmer.getCurrent());
 }
+console.log(arr);
+console.log(arr.length);
 }
