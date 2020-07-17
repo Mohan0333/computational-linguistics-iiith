@@ -1,0 +1,7 @@
+Important fuctions present in the experiment:
+-we can know the number of tokens,types and also root types.
+-we can select any one of the three corpus.
+ Functions i fell to be missing:
+ -it should highlight the tokens and types as answer.
+ -we should also add get answer button to know the answer if user cannot find the answer.
+ 
