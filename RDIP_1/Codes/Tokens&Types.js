@@ -118,8 +118,12 @@ function stmg(){
         compare(arr.length);
 }
 function compare(ans){
-	if(document.getElementById("st").value==ans)
-		document.getElementById("demo6").innerHTML="correct";
-	else
-		document.getElementById("demo6").innerHTML="wrong";
+	if(document.getElementById("st").value==ans){
+		document.getElementById("st").style.background="green";
+		document.getElementById("demo6").innerHTML="<span style='color:green'>Right Answer</span>";
+	}
+	else{
+		document.getElementById("st").style.background="red";
+		document.getElementById("demo6").innerHTML="<span style='color:red'>Wrong Answer</span>"
+	}
 }
