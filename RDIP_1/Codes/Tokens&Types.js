@@ -27,10 +27,10 @@ var corpus=[['A mouse was having a very bad time. She could find no food at all.
  
  //to include snowball
  
- var stemmer = new Snowball('English');
-stemmer.setCurrent('abbreviations');
-stemmer.stem();
-console.log(stemmer.getCurrent());
+ //var stemmer = new Snowball('English');
+//stemmer.setCurrent('abbreviations');
+//stemmer.stem();
+//console.log(stemmer.getCurrent());
  
  var str='';
  //to display the corpus
@@ -93,5 +93,17 @@ else
 function root(){
 		 document.getElementById("demo3").innerHTML="Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types."
 	     document.getElementById("demo4").innerHTML="#new types:<br> <input type='text' size='8'>"
-		 document.getElementById("demo5").innerHTML='<button>Submit</button>'
+		 document.getElementById("demo5").innerHTML='<button onclick="stmg()">Submit</button>'
 	 }
+function stmg(){
+var	ss= str.replace(/[^a-zA-Z]/g,"");
+var sl=ss.toLowerCase();
+var stm=sl.split(' ');
+var stemmer = new Snowball('English');
+
+for(i=0;i<stm.length;i++){
+	stemmer.setCurrent(stm[i]);
+	stemmer.stem();
+    console.log(stemmer.getCurrent());
+}
+}
