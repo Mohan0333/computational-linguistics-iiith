@@ -35,6 +35,17 @@ var corpus=[['A mouse was having a very bad time. She could find no food at all.
  var str='';
  //to display the corpus
  function dis(){
+	    document.getElementById("demo1").innerHTML="";
+        document.getElementById("demo2").style.display="";
+        document.getElementById("demo3").innerHTML=''
+        document.getElementById("demo4").innerHTML=""
+		document.getElementById("demo5").innerHTML=''
+		document.getElementById("demo6").innerHTML="";
+		document.getElementById("tok").value="";
+		document.getElementById("tok").style.background="white";
+		document.getElementById("typ").value="";
+		document.getElementById("typ").style.background="white";
+		  
 	 if(choose.value=="corpus1")
 	 {
 	 document.getElementById("demo").innerHTML=corpus[0];
@@ -106,17 +117,46 @@ function stmg(){
         str = str.split(" ");
         let arr = [];
 		var stemmer = new Snowball('English');
-        for (let i = 0; i <str.length; i++) {
-            stemmer.setCurrent(str[i]);
+         
+		 
+		 if(choose.value=="corpus1"){
+		for (let i = 0; i <str.length; i++) {
+		 if(str[i]=='found' || str[i]=='ate'  || str[i]=='grown' || str[i]=='had' || str[i]=='were')
+            continue;
+			stemmer.setCurrent(str[i]);
             stemmer.stem();
             arr.push(stemmer.getCurrent());
-        }
+        
+		}
+		 }
+		 
+		 else if(choose.value=="corpus2"){
+			 for (let i = 0; i <str.length; i++) {
+		    if(str[i]=='me' || str[i]=='heard' || str[i]=='you' || str[i]=='had' || str[i]=='up' || str[i]=='can' || str[i]=='came' || str[i]=='himself')
+            continue;
+			stemmer.setCurrent(str[i]);
+            stemmer.stem();
+            arr.push(stemmer.getCurrent());	
+			
+			 }
+		 }
+			 
+		else if(choose.value=="corpus3"){	
+         for (let i = 0; i <str.length; i++) {
+		 if(str[i]=='his' || str[i]=='himself'  || str[i]=='does' || str[i]=='did' || str[i]=='could' ||str[i]=='may'||str[i]=='me')
+            continue;
+			stemmer.setCurrent(str[i]);
+            stemmer.stem();
+            arr.push(stemmer.getCurrent());
+          }
+		}
+			
 		arr = new Set(arr);
 	    arr = Array.from(arr)
         console.log(arr);
 		console.log(arr.length);
         compare(arr.length);
-}
+		 }
 function compare(ans){
 	if(document.getElementById("st").value==ans){
 		document.getElementById("st").style.background="green";
@@ -125,5 +165,5 @@ function compare(ans){
 	else{
 		document.getElementById("st").style.background="red";
 		document.getElementById("demo6").innerHTML="<span style='color:red'>Wrong Answer</span>"
-	}
+	} 
 }
