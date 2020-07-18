@@ -1,0 +1,8 @@
+functions present in the experiment:
+-it contains two languages English and Hindi
+-it shows parts of speech of every word in the sentence
+-if the answer is wrong we can also know the right answers
+-we can also hide answers if we don't need them
+
+functions that are needed:
+-in the table headings are required for answers
