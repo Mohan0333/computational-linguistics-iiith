@@ -69,7 +69,7 @@ function sen(){
 		var w="";
 	for(i=0;i<str1.length;i++){
 	
-		w+="<tr><td>"+str1[i]+"</td><td><select><option value='Noun'>Noun</option><option value='Pronoun'>Pronoun</option><option value='Verb'>Verb</option><option value='Adjective'>Adjective</option><option value='Adverb'>Adverb</option><option value='Determiner'>Determiner</option><option value='Preposition'>Preposition</option><option value='Conjunction'>Conjunction</option><option value='Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
+		w+="<tr><td>"+str1[i]+"</td><td><select><option value='Noun' selected>Noun</option><option value='Pronoun'>Pronoun</option><option value='Verb'>Verb</option><option value='Adjective'>Adjective</option><option value='Adverb'>Adverb</option><option value='Determiner'>Determiner</option><option value='Preposition'>Preposition</option><option value='Conjunction'>Conjunction</option><option value='Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
 		
 	   }
 	}
@@ -78,8 +78,11 @@ function sen(){
 				var w="";
 	for(i=0;i<str1.length;i++){
 	
-		w+="<tr><td>"+str1[i]+"</td><td><select><option value='Noun'>Noun</option><option value='Pronoun'>Pronoun</option><option value='Verb'>Verb</option><option value='Adjective'>Adjective</option><option value='Adverb'>Adverb</option><option value='Postposition'>Postposition</option><option value='Conjunction'>Conjunction</option><option value='Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
+		w+="<tr><td>"+str1[i]+"</td><td><select><option value='Noun' selected>Noun</option><option value='Pronoun'>Pronoun</option><option value='Verb'>Verb</option><option value='Adjective'>Adjective</option><option value='Adverb'>Adverb</option><option value='Postposition'>Postposition</option><option value='Conjunction'>Conjunction</option><option value='Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
 	 }		
 	}
 	document.getElementById("demo1").innerHTML="<center><table id='z'><tr><th>LEXICON</th><th>POS</th><th></th><th></th></tr><tr></td></tr>" + w + "</table></center>";	
+	document.getElementById("demo2").innerHTML="<center><button>Submit</button>"
 	}
+		
+	
